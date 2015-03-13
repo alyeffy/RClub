@@ -23,6 +23,7 @@ ls
 
 # How do we change directories? Use the cd (change directory) command. Let's go to my Documents folder.
 cd Documents
+# Windows people need to do this first: mkdir Documents
 pwd
 ls
 # Notice how the prompt now displays ~/Documents for our location.
@@ -30,7 +31,6 @@ ls
 # cd can be used to go to any folder on your computer. To go somewhere, type the full length of the file directory (or use shortcuts).
 
 # To go back to h~/Documentsome - both of these commands work
-cd /home/jeff # never forget the starting '/'
 cd ~ # remember ~ = /home/yourUserName
 
 # There are also two shortcuts you can use for getting around faster on the command line. 
@@ -42,10 +42,6 @@ cd ./Documents # current directory/Documents
 pwd
 cd .. # go back to parent directory
 pwd
-
-# As a little bit of a test, cd to where you've saved this file. If there are spaces or other weird characters in your directory path, you need to 'escape' them with '\'. So 'My Documents' becomes 'My\ Documents'. (Don't use spaces in filenames if you can help it.)
-# An example:
-cd ~/Documents/RClub/
 
 # Many commands also have multiple behaviors that you can invoke with command line 'flags.' What is a flag? It's generally just your command followed by a '-' and the name of the flag (sometimes it's '--' followed by the name of the flag. You follow the flag with any additional arguments you might need.
 
@@ -87,7 +83,7 @@ more test2.txt
 less test2.txt 
 # you can also just look at the first 5 lines with 'head' (you can specify more or less lines with -n
 head test2.txt
-head -n 2 test2.txt
+head -n 1 test2.txt
 # tail is same as head but for end of file
 tail test2.txt
 
@@ -161,10 +157,10 @@ grep Act5C Drosophila_melanogaster.BDGP5.77.gtf
 grep Act5C Drosophila_melanogaster.BDGP5.77.gtf > Act5C.gtf
 head Act5C.gtf
 
-# wc returns word counts. In this case we want the number of lines, so we will use wc -l
-wc -l Drosophila_melanogaster.BDGP5.77.gtf 
+# wc returns word counts. In this case we want the number of Act5C-related lines, so we will use wc -l
+wc -l Act5C.gtf 
 
-# What if we wanted the number of Act5C-related entries? Let's 'pipe' the output of grep to wc -l
+# What if we wanted the number of Act5C-related entries in one command? Let's 'pipe' the output of grep to wc -l
 grep Act5C Drosophila_melanogaster.BDGP5.77.gtf | wc -l
 # Looks like there are 37 lines.
 
@@ -208,10 +204,11 @@ ls -l # allows us to view permissions
 # x = execute (1) - allow us to run the file
 # First column (of rwx) is for us (the user), second column is for other accounts on this computer, last is for anyone to do stuff
 
-# To change permissions, we need to use 'chmod'. However, chmod requires us to have root priveliges (superuser... they can do anything). You are not the superuser, but you can become it temporarily with the 'sudo' command. You can delete and mess up stuff that you're not supposed to with sudo, so be careful with it.
-sudo chmod +x fastqc #you need to enter your password for sudo to work
+# To change permissions, we need to use 'chmod'. 
+chmod +x fastqc 
 #gives everyone permission to execute fastqc
-# you can also do "sudo chmod 700 fastqc", which gives us permissions 4 (read), 2 (write), and 1 (execute), and others/world 0 (can't do anything)
+# if it ever says "Permission Denied" add 'sudo' before a command and enter your password to become root (all-powerful). Be careful with sudo.
+# you can also do "chmod 700 fastqc", which gives us permissions 4 (read), 2 (write), and 1 (execute), and others/world 0 (can't do anything)
 
 # to run any script that isn't built-in to your OS, you need to specify the directory and THEN the name of the script.
 # like this:
@@ -231,6 +228,7 @@ FastQC/fastqc fsugar_00_1_1.fastq
 
 # Let's use seqtk, a very fast fastq processing algorithm.
 wget https://github.com/lh3/seqtk/archive/master.zip
+#on cygwin: wget --no-check-certificate https://github.com/lh3/seqtk/archive/master.zip
 # If you have git installed, you can just use
 # git clone https://github.com/lh3/seqtk.git
 unzip master.zip
