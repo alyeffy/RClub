@@ -54,6 +54,9 @@ ref
 
 # All you need to do to add more information to your plot/change things is add
 # on more elements. Lets add a logarithmic scale on the x axis.
+ref <- ggplot(data, aes(x = log(bodywt), y = sleep_total)) + geom_point()
+ref
+
 ref <- ref + scale_x_log10()
 ref
 
@@ -130,7 +133,7 @@ ggplot(data, aes(x = bodywt, y = sleep_total, size = log(brainwt), color = sleep
 # understands. To see what it understands, check out either the help for 
 # ?geom_point or its documentation (with examples) at 
 # http://docs.ggplot2.org/current/
-
+?geom_point
 # Now for a few other types of plots:
 
 # Boxplot... note that stats are automatically performed, more about that later...
@@ -138,7 +141,7 @@ ggplot(data, aes(x = vore, y = sleep_total)) + geom_boxplot()
 ggplot(data, aes(x = vore, y = sleep_total, fill = vore)) + geom_boxplot()
 
 # 1D density
-ggplot(data, aes(x = sleep_total, fill = vore)) + geom_density(alpha = 0.5)
+ggplot(data, aes(x = sleep_total, fill = vore)) + geom_density()
 # 2D density
 ggplot(data, aes(x = sleep_total, y = sleep_rem)) + geom_density2d()
 # Violin plot
