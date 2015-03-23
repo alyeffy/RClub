@@ -182,7 +182,8 @@ head genes.txt
 # sed is a text replacer/editor that you can invoke from the command line. Here is the only command you need to know (substitution).
 # Usage: sed -i 's/<words_to_replace>/<new_words>/g' <filename>
 # The -i perfoms an 'in place' edit. Remove it, and output is sent to the console.
-sed -i 's/gene_name\ \"*\"//g' genes.txt
+# sed -i 's/<replace words>/<replace with>/g' <files>
+sed -i 's/gene_name\ \"//g' genes.txt
 # We are replacing gene_name "*" with nothing in this case.
 head genes.txt
 # whoops missed the last " somehow
