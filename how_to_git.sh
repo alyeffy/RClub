@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# how to use git with R studio
+http://jennybc.github.io/2014-05-12-ubc/ubc-r/session03_git.html
+
 # List of git commands that are useful
 
 # Setup
@@ -28,6 +31,12 @@ git add fileName
 # add everything in current directory
 git add .
 
+# stage deleted files or remove them from the repository
+git rm fileName
+
+# have git ignore files that you don't it want to know about
+# just edit .gitignore and add those files
+
 # unstage file for commit
 git reset HEAD fileName
 
@@ -55,3 +64,6 @@ git merge branchName
 # if there is a conflict (i.e. each branch modified the same point of a file) you have to go in and fix the conflict yourself
 # To view the conflict
 git status
+
+# delete the repository (but not your files)... this does not delete the remote, do that on github or whatever
+# just delete the .git directory

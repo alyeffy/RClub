@@ -1,11 +1,15 @@
 # example R script to be invoked from the command line, it just finds the mean
 # GDP for each country in an example file and makes a plot of population.
 
+# commandArgs is nice for parsing command line arguments
+# usage: Rscript yourScript.R arg1 arg2 arg3 ...
+# Rscript will print anything sent to the R console
 args <- commandArgs(trailingOnly = TRUE)
 fileToOpen <- args[1]
 
 # Got this crazy command from stackoverflow. It removes the file extension.
 continent <- sub("\\.[[:alnum:]]+$", "", fileToOpen)
+# paste is nice for mashing strings together
 print(paste("Rscript running for ", continent, sep = ""))
 
 file <- read.delim(fileToOpen, sep = "\t")

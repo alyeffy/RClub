@@ -12,6 +12,9 @@ ssh -Y yourAccount@computer.network.ca
 # You can generally use all the bash commands you would normally use.
 
 # Westgrid specific commands:
+# To sign up for Westgrid, you need to have your PI make a Compute Canada account, and then you make one under your PI's account.
+# It's free!!!!
+
 # Check out https://www.westgrid.ca//support/quickstart/new_users
 
 # Show the whole queue
