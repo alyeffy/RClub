@@ -23,7 +23,7 @@ for (nation in unique(file$country)) {
   sub <- subset(file, country == nation)
   
   # Let's make a file with the mean population.
-  sink(file = paste(nation,".results"))
+  sink(file = paste(nation,".results"), sep = "")
   print(paste(nation,"'s mean population during the surveyed years was: ",
         mean(sub$pop)/1000000, " million.", sep = ""))
   print("Isn't that just wonderful.")
