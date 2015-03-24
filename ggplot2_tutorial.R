@@ -1,14 +1,14 @@
 # ggplot2 is a plotting framework that is relatively easy to use, powerful, AND
 # it looks good.
 
+
+# change for git
+# jfkldasjfldskjflsadkjfal;lsdkjfl;sadjf;la
+#kljdlafkjsldkjfalsdkjflaskdj
+
 # Jeff Stafford
 
 library(ggplot2)
-
-# Here's the data we're going to use (bundled with ggplot2).
-str(msleep)
-# Looks like it's data on sleep of some kind.
-data <- msleep
 
 # What is a ggplot2 object? Basically it is your data + information on how to
 # interpret it + the actual geometry it uses to plot it.
