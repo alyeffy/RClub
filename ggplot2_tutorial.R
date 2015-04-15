@@ -1,11 +1,6 @@
 # ggplot2 is a plotting framework that is relatively easy to use, powerful, AND
 # it looks good.
 
-
-# change for git
-# jfkldasjfldskjflsadkjfal;lsdkjfl;sadjf;la
-#kljdlafkjsldkjfalsdkjflaskdj
-
 # Jeff Stafford
 
 library(ggplot2)
